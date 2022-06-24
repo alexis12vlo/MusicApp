@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="./index.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
+
+    <!-- Loading the Deezer SDK -->
+	<script type="text/javascript" src="http://cdn-files.deezer.com/js/min/dz.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap" rel="stylesheet">
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>React App</title>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="dz-root">
+   
+  </div>
+    
+<script>
+
+
+	DZ.init({
+		appId   : '547962' , 
+		channelUrl: 'http://localhost:3000/' ,
+    player: {
+      container: 'dz-root',
+      format : 'square',
+      width : 180,
+			height : 180,
+      volumen:true,
+                onload: function() { 
+                    //configure the player with a set of tracks
+                    //autoplay set to false
+                    muted: false;
+	                  repeat: 0;
+	                  shuffle: false;
+                    volumen:100;
+                    console.log('CLICK PARA ACTIVAR HOKIES');
+                    //DZ.player.playTracks(['68973465']);
+                }
+            }
+	});
+
+DZ.api('/user/5', function(response){
+	console.log("Name of user id 5", response.name);
+});
+var userToken;
+
+    DZ.login(function (response) {
+        if (response.authResponse) {
+            console.log('Welcome!  Fetching your information.... ');
+            DZ.api('/user/me', function (response) {
+                console.log('Good to see you, ' + response.name + '.');
+            });
+            userToken = response.authResponse.accessToken;
+            console.log(userToken)
+        } else {
+            console.log('User cancelled login or did not fully authorize.');
+        }
+    }, { perms: 'email, manage_library' });
+
+
+</script>
+    
+
+    <div id="root">
+
+
+
+    </div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+  </body>
+</html>

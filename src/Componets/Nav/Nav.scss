@@ -1,0 +1,67 @@
+.NavContainer{
+    display: flex;
+    flex-direction: column;
+    padding-top: 30px;
+   
+}
+
+
+.NavPicture{
+height: 59px;
+width: 250px;
+left: 40px;
+top: 50px;
+border-radius: 0px;
+padding-left: 40px;
+width: 250px;
+height: 59px;
+left: 40px;
+top: 50px;
+    img{
+        width: 100%;
+        height: 100%;
+    }
+}
+.ListLibreria , .ListPlaylist{
+    h1{
+        font-family: Quicksand;
+        font-size: 22px;
+        font-weight: 700;
+        line-height: 28px;
+        letter-spacing: 0em;
+        text-align: left;
+        padding-left: 40px;
+
+    }
+    ul{
+        list-style: none;
+        padding: 0;
+        width: 500px;
+        li{
+            text-align: left;
+            font-family: 'Quicksand';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 20px;
+            color: #ffffff;
+            height: 20px;
+            margin: 5px;
+            margin-left: 0px;
+            
+            border-style: solid;
+            border-width: 0px;
+            border-left-width: 3px;
+            border-color:#662323;;
+            padding-left: 37px;
+
+        }
+        li:hover{
+            cursor: pointer;
+            color: #E86060;
+            border-left-width: 3px;
+            border-left-color: #E86060;
+        }
+    }
+}
+

@@ -1,0 +1,375 @@
+.ContentContainer{
+    margin: 30px;
+}
+.ContentSearch{
+    display: flex;
+    justify-content: space-between;
+}
+.ContentSearchIcon{
+    input{
+        border: none;
+        background: transparent;
+
+    }
+    input:focus{
+        border: none;
+        outline: none;
+    }
+    input:active{
+        border: none;
+    }
+    input::placeholder {
+        font-family: 'Quicksand';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 22px;
+
+        
+        color: #BDBDBD;
+      }
+    display: flex;
+    align-items: center;
+    padding-left:16px;
+    justify-content: space-between;
+    height: 36px;
+    width: 524px;
+    padding-right: 16px;
+
+    background: #FFFFFF;
+        /* Gray */
+
+    border: 1px solid #828282;
+    border-radius: 100px;
+}
+.FaUser{
+    font-style: normal;
+font-weight: 900;
+font-size: 14px;
+line-height: 16px;
+display: flex;
+align-items: center;
+text-align: center;
+margin-right: 12px;
+color: #E86060;
+}
+.ContentSearchUser{
+    height: 36px;
+
+    display: flex;
+    align-items: center;
+    h2{
+        font-family: 'Quicksand';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
+
+
+        color: #4F4F4F;
+    }
+}
+.FaPlay{
+    width: 63px;
+    height: 72px;
+
+
+}
+.FaPlay:hover{
+    cursor: pointer;
+}
+.FaSearch{
+    font-family: 'Font Awesome 5 Free';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 18px;
+    line-height: 21px;
+    
+    /* Soft gray */
+    
+    color: #BDBDBD;
+
+}
+.ContentPreview{
+    display: flex;
+    margin-top: 30px;
+    height: 200px;
+    
+}
+.ContentPreviewImage{
+    width:25%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.ContentPreviewText{
+    width:75%;
+    display: flex;
+    flex-direction: column;
+    padding-left: 30px;
+    opacity: 0.95;
+    background: linear-gradient(0deg, rgba(167, 0, 0, 0.7), rgba(167, 0, 0, 0.7));
+
+}
+.ContentPreviewTextName{
+    display: flex;
+    align-items: center;
+    height: 30px;
+    padding-top: 20px;
+    h3{
+        /* 22-bold-white */
+
+        font-family: 'Quicksand';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 22px;
+        line-height: 28px;
+        /* identical to box height */
+
+
+        color: #FFFFFF;
+
+    }
+}
+.ContentPreviewTextSeguidores{
+    display: flex;
+    align-items: center;
+    height: 20px;
+    p{
+        font-family: 'Quicksand';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 18px;
+        /* identical to box height */
+
+
+        color: #FFFFFF;
+        span{
+            margin-left: 16px;
+            font-family: 'Quicksand';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 10px;
+            line-height: 12px;
+                /* identical to box height */
+
+
+            color: #662323;
+        }
+
+    }
+}
+.ContentPreviewTextDescription {
+    p{
+        /* 12-regular-white-lineheight-20-paragraph */
+
+font-family: 'Quicksand';
+font-style: normal;
+font-weight: 700;
+font-size: 12px;
+line-height: 20px;
+margin: 0px;
+color: #FFFFFF;
+text-align: center;
+    }
+}
+.ContentPreviewTextIcons{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    height: 70px;
+}
+.ContentPreviewTextIconsReproducir{
+  
+  
+    display: flex;
+    margin-right: 20px;
+        button{
+        border: none;
+        padding: none;
+        height: 31px;
+        width: 117px;
+        border-radius: 100px;
+        background-color:  #E86060;
+        font-family: 'Quicksand';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 18px;
+        border-style: none;
+        /* identical to box height */
+
+        align-items: center;
+        text-align: center;
+
+        color: #ffffff;
+
+        mix-blend-mode: normal;
+
+    }
+    button:hover{
+        cursor: pointer;
+    }
+}
+
+.ContentPreviewTextIconsSeguir{
+  
+  
+    display: flex;
+    margin-right: 20px;
+        button{
+        border: none;
+        padding: none;
+        height: 31px;
+        width: 117px;
+        border-radius: 100px;
+        background: transparent;
+        font-family: 'Quicksand';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 18px;
+        border-style: none;
+        /* identical to box height */
+
+        align-items: center;
+        text-align: center;
+
+        color: #EB5757;
+
+        mix-blend-mode: normal;
+        border: 1px solid #EB5757;
+    }
+    button:hover{
+        cursor: pointer;
+    }
+}
+.ContentPreviewTextIconsInfo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    :hover{
+        cursor: pointer;
+    }
+}
+.ContentCardsContainer{
+    width: 100%;
+    max-height: 220px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+
+}
+
+.ContentCardsResult{
+    display: flex;
+    width: 100%;
+    
+    
+    
+    h2{
+        margin: 0px;
+        padding-top: 10px;
+        padding-bottom: 12px;
+        font-family: 'Quicksand';
+font-style: normal;
+font-weight: 700;
+font-size: 22px;
+line-height: 28px;
+/* identical to box height */
+
+
+/* Red Principal */
+
+color: #E86060;
+    }
+}
+.Card{
+    background-color: #857777;
+    width: 18%;
+    height: 180px;
+    color: #4b0d0d;
+    
+    margin-bottom: 60px;
+    
+}
+.CardPreviewImage{
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 145px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.FaPlay2{
+    width: 32px;
+height: 36px;
+:hover{
+    cursor: pointer;
+}
+}
+.AiOutlineMore{
+    position: absolute;
+    width: 32px;
+height: 36px;
+left: 145px;
+top: 5px;
+
+font-family: 'Font Awesome 5 Free';
+font-style: normal;
+font-weight: 900;
+font-size: 36px;
+line-height: 41px;
+
+color: #FFFFFF;
+
+}
+.AiOutlineMore:hover{
+    cursor: pointer;
+}
+.CardTitles{
+
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: flex-start;
+    padding-top: 8px;
+    h3{
+        font-family: 'Quicksand';
+font-style: normal;
+font-weight: 700;
+font-size: 12px;
+line-height: 18px;
+text-align: start;
+/* identical to box height */
+
+
+color: #555555;
+margin: 0px;
+    }
+    p{
+        margin: 0px;
+        font-family: 'Quicksand';
+font-style: normal;
+font-weight: 400;
+font-size: 12px;
+line-height: 15px;
+/* identical to box height */
+
+
+/* Gray */
+
+color: #828282;
+    }
+}

@@ -1,0 +1,9 @@
+#dz-root{
+    position: absolute;
+    background-color: black;
+    width: 300px;
+   margin-left: 1120px;
+   margin-top: 107px;
+   z-index: 1000;
+}
+

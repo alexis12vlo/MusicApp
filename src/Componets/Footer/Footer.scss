@@ -1,0 +1,157 @@
+.FooterContainer{
+    display: flex;
+    height: 100%;
+    justify-content: space-between;
+}
+.FooterSong{
+    width: 324px;
+    height: 100%;
+    display: flex;
+}
+.FooterSongImage{
+    background-color: #EB5757;
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    width: 100px;
+    height:100%;
+    background-color: beige;
+}
+.FooterSongText{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 10px;
+    h3{
+        font-family: 'Quicksand';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 18px;
+        text-align: start;
+        /* identical to box height */
+        
+        
+        color: #FFFFFF;
+        margin:0px  
+      }
+    p{
+        font-family: 'Quicksand';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 15px;
+        /* identical to box height */
+        
+        
+        color: #FFFFFF;
+        margin: 0px;
+    }
+}
+.FooterSongIcons{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    width: 170px;
+}
+.FooterSongAtrasIcon{
+    display: flex;
+
+}
+.FooterSongPlayIcon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FF7676;
+    padding: 20px;
+    border-radius: 100%;
+    
+    
+}
+.FooterSongPausedIcon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FF7676;
+    padding: 10px;
+    border-radius: 100%;
+    
+    
+}
+.FooterSongAdelanteIcon{
+    display: flex;
+    
+}
+.FaPlay3{
+
+font-size:18px ;
+margin-left: 3px;
+color: #FFFFFF;
+
+}
+.FaPlay4{
+
+    font-size:40px ;
+    padding: 0px;
+    color: #FFFFFF;
+    
+    
+    }
+.FooterSongPlayIcon:hover{
+    cursor: pointer;
+}
+.AtrasIcon , .AdelanteIcon{
+    font-size: 40px;
+    :hover{
+        cursor: pointer;
+    }
+}
+.FooterSongVolumen{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 200px;
+}
+.FooterSongVolumenInput{
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    :hover{
+        cursor: pointer;
+    }
+    input{
+        width: 100px;
+        color: blanchedalmond;
+        background-color: #ffffff;
+        height: 6px;
+        -webkit-appearance: none;
+      
+    }
+    input::-webkit-slider-thumb {
+        -webkit-appearance: none;
+
+        background-color: rgb(255, 255, 255);
+        width: 20px;
+        color: #ffffff;
+        height: 20px;
+        border: 0px solid rgb(97, 18, 18);
+        border-radius: 50%;
+      }
+
+
+    
+}
+.FooterSongVolumenIcon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-right: 15px;
+}
+.Volumen{
+    font-size: 30px;
+    color: rgb(255, 255, 255);
+}
