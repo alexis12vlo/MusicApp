@@ -12,16 +12,54 @@
 }
 .Nav1{
     width:24%;
-    background-color:#662323;
-    ;
+    
 
 }
 .Content1{
     width: 80%;
+
 }
 .Footer{
-    background-color: #EB5757;
+    background-color:#d7a4a4;
     width: 100%;
     height:12%;
-    position: relative;
+    z-index: 10000;
+    position:relative;
 }
+
+@media (max-width: 700px) {
+    
+    .Alex{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction:column;
+    }
+    .Header{
+        width: 100%;
+        background-color:#ffffff;;
+        height:100%;
+        display: flex;
+        justify-content: center;
+    }
+    .Nav1{
+        width:24%;
+        display: none;
+    
+    }
+    .Content1{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    
+    }
+    .Footer{
+        background-color:#d7a4a4;
+        width: 100%;
+        height:12%;
+        z-index: 10000;
+        position:relative;
+    }
+
+
+  }

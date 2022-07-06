@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="icon" href="%PUBLIC_URL%/logomusic(1).jpg" />
     <link type="text/css" rel="stylesheet" href="./index.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
@@ -10,17 +10,17 @@
       name="description"
       content="Web site created using create-react-app"
     />
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
 
     <!-- Loading the Deezer SDK -->
-	<script type="text/javascript" src="http://cdn-files.deezer.com/js/min/dz.js"></script>
+    <script src="https://e-cdn-files.dzcdn.net/js/min/dz.js"></script>
+    <script src="background-color-theif.js" type="text/javascript"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap" rel="stylesheet">
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logomusic.png" />
     <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
@@ -35,26 +35,27 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
+    <title>Music App</title>
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-  <div id="dz-root">
-   
+    
+    <div  id="dz-root">
+  
   </div>
     
 <script>
-
+ 
 
 	DZ.init({
 		appId   : '547962' , 
-		channelUrl: 'http://localhost:3000/' ,
+		channelUrl: 'https://music-app-123.netlify.app/' ,
     player: {
       container: 'dz-root',
       format : 'square',
-      width : 180,
-			height : 180,
+ 
       volumen:true,
+      
+     
                 onload: function() { 
                     //configure the player with a set of tracks
                     //autoplay set to false
@@ -62,30 +63,44 @@
 	                  repeat: 0;
 	                  shuffle: false;
                     volumen:100;
-                    console.log('CLICK PARA ACTIVAR HOKIES');
+
                     //DZ.player.playTracks(['68973465']);
                 }
+                
             }
 	});
 
-DZ.api('/user/5', function(response){
-	console.log("Name of user id 5", response.name);
-});
+
 var userToken;
 
     DZ.login(function (response) {
         if (response.authResponse) {
             console.log('Welcome!  Fetching your information.... ');
+            window.addEventListener('message', event => {
+    // IMPORTANT: check the origin of the data!
+    if (event.origin.startsWith('http://www.deezer.com/plugins/player.php?channel=https://music-app-123.netlify.app/&app_id=547962&width=180&height=180&format=square')) {
+        // The data was sent from your site.
+        // Data sent with postMessage is stored in event.data:
+    } else {
+        // The data was NOT sent from your site!
+        // Be careful! Do not use it. This else branch is
+        // here just for clarity, you usually shouldn't need it.
+        return;
+    }
+});
+            var iframes = document.querySelector("#dzplayer"); //te da los Iframes de la pagina
+            var iframeDocument = iframes.contentWindow.document;
+            iframeDocument.querySelector("#widget-cover-thumbnail-picture").click(); //Con esto tenemos el iframe
             DZ.api('/user/me', function (response) {
                 console.log('Good to see you, ' + response.name + '.');
             });
             userToken = response.authResponse.accessToken;
-            console.log(userToken)
         } else {
             console.log('User cancelled login or did not fully authorize.');
         }
-    }, { perms: 'email, manage_library' });
+    }, {scope: 'manage_library,basic_access'});
 
+    
 
 </script>
     
@@ -95,6 +110,8 @@ var userToken;
 
 
     </div>
+    
+    
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
