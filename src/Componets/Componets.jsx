@@ -2,7 +2,7 @@ import Nav from './Nav/Nav.jsx';
 import Content from './Content/Content.jsx';
 import Footer from './Footer/Footer.jsx';
 import './Componets.scss'
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import rosa from './rosa.png'
 import sonido from './sonido2.png'
 function Componets() {
@@ -21,6 +21,17 @@ function Componets() {
     const [mostrargenero, setMostrarGenero] = useState('none');
     const [mostrarcanciones, setMostrarCanciones] = useState('flex');
     const [mostrarartista, setMostrarArtista] = useState('flex');
+    useEffect(() => {
+        setMostrarAlbum('none')
+        setMostrarCanciones('flex')
+        setMostrarGenero('none')
+    }, [buscar]);
+
+
+
+
+
+
 
     function Alternativo() {
         window.DZ.api(`genre/85/artists`, function (response) {
